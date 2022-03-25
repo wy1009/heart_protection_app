@@ -1,11 +1,17 @@
 import React from 'react'
-import { ScrollView, Text } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import CommentView from '../CommentView'
+
+const { Navigator, Screen } = createNativeStackNavigator()
 
 const App = () => {
   return (
-    <ScrollView>
-      <Text>test</Text>
-    </ScrollView>
+    <NavigationContainer>
+      <Navigator>
+        <Screen name="Comment" component={CommentView}></Screen>
+      </Navigator>
+    </NavigationContainer>
   )
 }
 
